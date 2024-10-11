@@ -1,8 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Joke and Translation App
 
-## Getting Started
+## Running in Development
 
-First, run the development server:
+First, install dependencies
+
+```bash
+npm install
+
+yarn install
+
+pnpm install
+```
+
+Second, run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +20,27 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Setup translation API key
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Add a `.env.local` to the root of your project with your `DeepL` API key.
 
-## Learn More
+## Technology choices
 
-To learn more about Next.js, take a look at the following resources:
+I chose to use:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Material UI](https://mui.com/)
+- [React Hook Form](https://react-hook-form.com/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+My intention here was to simplify the front end development process and take advantage of existing library to build out a robust application and leverage the library's ability to handle form validation. My future intentions are to use Zod to better integrate with TypeScript and improve validation boundaries.
 
-## Deploy on Vercel
+## Future plans
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+I would like to add a number of features that I think would smooth out the experience.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Component-centric tests, to improve understanding of the intention of the component
+- Feature flags, and an endpoint to show feature availability, handle a case were the translation endpoint isn't available or ready
+- Expand usage of the JokeForm to allow translation after fetch of a joke. It would be great to just offer "get this joke in X language" rather than have a two-part fetch and then translate.
